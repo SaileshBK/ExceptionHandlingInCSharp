@@ -13,13 +13,14 @@ namespace ExceptionHandlingInCSharp
             }
             else
             {
-                Console.WriteLine("Unknown Operation.");
-                return 0;
+                throw new ArgumentOutOfRangeException(nameof(operation),"The mathematical operator is not supported.");
+                //Console.WriteLine("Unknown Operation.");
+                //return 0;
             }
             
         }
 
         private int Divide(int number, int divisor) =>  number / divisor;
-        
+
     }
 }

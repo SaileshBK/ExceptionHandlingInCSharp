@@ -17,8 +17,19 @@ namespace ExceptionHandlingInCSharp
             string operation = ReadLine().ToUpperInvariant();
 
             var calculator = new Calculator();
-            int result = calculator.calclator(number1, number2, operation);
-            DisplayResult(result);
+            
+            try
+            {
+                int result = calculator.calclator(number1, number2, operation);
+                DisplayResult(result);
+
+            }
+            catch (Exception ex)
+            {
+                WriteLine($"Sorry, Something went wromg. {ex}");
+
+            }
+            
 
             WriteLine("Press enter to exit.");
             ReadLine();
