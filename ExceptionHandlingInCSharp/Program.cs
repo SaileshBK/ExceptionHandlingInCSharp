@@ -26,7 +26,7 @@ namespace ExceptionHandlingInCSharp
             }
             catch (Exception ex)
             {
-                WriteLine($"Sorry, Something went wromg. {ex}");
+                WriteLine($"Sorry, Something went wrong. {ex}");
 
             }
             
