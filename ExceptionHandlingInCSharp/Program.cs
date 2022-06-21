@@ -24,15 +24,22 @@ namespace ExceptionHandlingInCSharp
                 DisplayResult(result);
 
             }
+
             catch (ArgumentOutOfRangeException ex)
             {
                 //Log.Error(ex);
                 WriteLine($"Opration is not supported. {ex}");
             }
+            catch (ArgumentNullException ex) when (ex.ParamName == "operation")
+            {
+                //Log.Error(ex);
+                WriteLine($"Operation was not provided.{ex}");
+
+            }
             catch (ArgumentNullException ex)
             {
                 //Log.Error(ex);
-                WriteLine($"operation was not provided. {ex}");
+                WriteLine($"An argument was null. {ex}");
             }
             catch (Exception ex)
             {
