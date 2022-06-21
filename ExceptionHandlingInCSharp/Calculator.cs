@@ -15,7 +15,18 @@ namespace ExceptionHandlingInCSharp
             //}
             if (nonNullOperation == "/")
             {
-                return Divide(number1, number2);
+                try
+                {
+                    return Divide(number1, number2);
+                }
+                catch (DivideByZeroException ex)
+                {
+                    Console.WriteLine("....logging...");
+                    //Log.Error(ex);
+
+                    // example of incorrect re thrown exception.
+                    throw ex;
+                }
             }
             else
             {
