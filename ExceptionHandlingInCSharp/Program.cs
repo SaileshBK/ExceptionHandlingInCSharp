@@ -39,6 +39,11 @@ namespace ExceptionHandlingInCSharp
                 WriteLine($"Sorry, Something went wrong. {ex}");
 
             }
+            // The use of finally block is to make sure we clean up anything whether not an exception occurs.
+            finally
+            {
+                WriteLine("...Finally...");
+            }
             
 
             WriteLine("Press enter to exit.");
