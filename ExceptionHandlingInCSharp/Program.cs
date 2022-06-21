@@ -20,9 +20,19 @@ namespace ExceptionHandlingInCSharp
             
             try
             {
-                int result = calculator.calclator(number1, number2, null);
+                int result = calculator.calclator(number1, number2, operation);
                 DisplayResult(result);
 
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                //Log.Error(ex);
+                WriteLine($"Opration is not supported. {ex}");
+            }
+            catch (ArgumentNullException ex)
+            {
+                //Log.Error(ex);
+                WriteLine($"operation was not provided. {ex}");
             }
             catch (Exception ex)
             {
