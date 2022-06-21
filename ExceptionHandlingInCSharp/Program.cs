@@ -20,7 +20,7 @@ namespace ExceptionHandlingInCSharp
             
             try
             {
-                int result = calculator.calclator(number1, number2, operation);
+                int result = calculator.calclator(number1, number2, null);
                 DisplayResult(result);
 
             }

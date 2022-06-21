@@ -7,7 +7,13 @@ namespace ExceptionHandlingInCSharp
 
         public int calclator(int number1, int number2, string operation)
         {
-            if (operation == "/")
+            string nonNullOperation =
+                operation?? throw new ArgumentNullException(nameof(operation));
+            //if (operation == null)
+            //{
+            //    throw new ArgumentNullException(nameof(operation));
+            //}
+            if (nonNullOperation == "/")
             {
                 return Divide(number1, number2);
             }
