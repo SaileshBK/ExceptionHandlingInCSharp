@@ -1,12 +1,32 @@
 ﻿using System;
-
+using static System.Console;
 namespace ExceptionHandlingInCSharp
 {
-    internal class Program
+    class Program 
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            // here we have used using static System.Console; to get access to console prefix.
+            WriteLine("Please enter first number:");
+            int number1 = int.Parse(ReadLine());
+
+            WriteLine("Please enter second number:");
+            int number2 = int.Parse(ReadLine());
+
+            WriteLine("Enter Operation:");
+            string operation = ReadLine().ToUpperInvariant();
+
+            var calculator = new Calculator();
+            int result = calculator.calclator(number1, number2, operation);
+            DisplayResult(result);
+
+            WriteLine("Press enter to exit.");
+            ReadLine();
+
+            
         }
+
+        private static void DisplayResult(int result) => WriteLine($"The result is : {result}");
+        
     }
 }
