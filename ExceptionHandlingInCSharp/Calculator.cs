@@ -25,7 +25,8 @@ namespace ExceptionHandlingInCSharp
                     //Log.Error(ex);
 
                     // example of correct way to re thrown exception.
-                    throw;
+                    //throw;
+                    throw new ArithmeticException("An error occured during calculation.",ex);
                 }
             }
             else
