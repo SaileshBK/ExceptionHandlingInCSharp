@@ -28,12 +28,14 @@ namespace ExceptionHandlingInCSharp
 
                     // example of correct way to re thrown exception.
                     //throw;
-                    throw new ArithmeticException("An error occured during calculation.",ex);
+                    //throw new ArithmeticException("An error occured during calculation.",ex);
+                    throw new CalculationException(ex);
                 }
             }
             else
             {
-                throw new ArgumentOutOfRangeException(nameof(operation),"The mathematical operator is not supported.");
+                throw new CalculationExceptionNotSupportedException(nonNullOperation);
+                //throw new ArgumentOutOfRangeException(nameof(operation),"The mathematical operator is not supported.");
                 //Console.WriteLine("Unknown Operation.");
                 //return 0;
             }

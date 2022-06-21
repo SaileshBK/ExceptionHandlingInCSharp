@@ -45,14 +45,14 @@ namespace ExceptionHandlingInCSharp
 
         // we can also override the ToString() method.
 
-        //public override string ToString()
-        //{
-        //    if (Operation == null)
-        //    {
-        //        return base.ToString();
-        //    }
-        //    return base.ToString() + Environment.NewLine + $"Unsupported operation: {Operation}";
-        //}
+        public override string ToString()
+        {
+            if (Operation == null)
+            {
+                return base.ToString();
+            }
+            return base.ToString() + Environment.NewLine + $"Unsupported operation: {Operation}";
+        }
 
 
 

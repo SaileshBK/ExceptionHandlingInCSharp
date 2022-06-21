@@ -30,10 +30,17 @@ namespace ExceptionHandlingInCSharp
 
             }
 
-            catch (ArgumentOutOfRangeException ex)
+            catch (CalculationExceptionNotSupportedException ex)
             {
                 //Log.Error(ex);
-                WriteLine($"Opration is not supported. {ex}");
+                // WriteLine($"Opration is not supported. {ex}");
+                WriteLine($"CalculationOperationNotSupportedException caught.'{ex.Operation}'");
+                WriteLine(ex);
+            }
+            catch (CalculationException ex)
+            {
+                WriteLine($"CalculationException caught");
+                WriteLine(ex);
             }
             catch (ArgumentNullException ex) when (ex.ParamName == "operation")
             {
@@ -46,11 +53,11 @@ namespace ExceptionHandlingInCSharp
                 //Log.Error(ex);
                 WriteLine($"An argument was null. {ex}");
             }
-            //catch (Exception ex)
-            //{
-            //    WriteLine($"Sorry, Something went wrong. {ex}");
+            catch (Exception ex)
+            {
+                WriteLine($"Sorry, Something went wrong. {ex}");
 
-            //}
+            }
             // The use of finally block is to make sure we clean up anything whether not an exception occurs.
             finally
             {
