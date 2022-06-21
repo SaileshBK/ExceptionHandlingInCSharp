@@ -5,7 +5,7 @@ namespace ExceptionHandlingInCSharp
     public class Calculator
     {
 
-        public int calclator(int number1, int number2, string operation)
+        public int calculate(int number1, int number2, string operation)
         {
             string nonNullOperation =
                 operation?? throw new ArgumentNullException(nameof(operation));
