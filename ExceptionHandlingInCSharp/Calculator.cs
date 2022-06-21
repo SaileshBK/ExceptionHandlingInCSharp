@@ -24,8 +24,8 @@ namespace ExceptionHandlingInCSharp
                     Console.WriteLine("....logging...");
                     //Log.Error(ex);
 
-                    // example of incorrect re thrown exception.
-                    throw ex;
+                    // example of correct way to re thrown exception.
+                    throw;
                 }
             }
             else
