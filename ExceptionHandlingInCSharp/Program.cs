@@ -6,6 +6,11 @@ namespace ExceptionHandlingInCSharp
     {
         static void Main(string[] args)
         {
+
+            AppDomain currentAppDomain = AppDomain.CurrentDomain;
+            currentAppDomain.UnhandledException
+                += new UnhandledExceptionEventHandler(HandleException);
+
             // here we have used using static System.Console; to get access to console prefix.
             WriteLine("Please enter first number:");
             int number1 = int.Parse(ReadLine());
@@ -41,11 +46,11 @@ namespace ExceptionHandlingInCSharp
                 //Log.Error(ex);
                 WriteLine($"An argument was null. {ex}");
             }
-            catch (Exception ex)
-            {
-                WriteLine($"Sorry, Something went wrong. {ex}");
+            //catch (Exception ex)
+            //{
+            //    WriteLine($"Sorry, Something went wrong. {ex}");
 
-            }
+            //}
             // The use of finally block is to make sure we clean up anything whether not an exception occurs.
             finally
             {
@@ -57,6 +62,11 @@ namespace ExceptionHandlingInCSharp
             ReadLine();
 
             
+        }
+
+        private static void HandleException(object sender, UnhandledExceptionEventArgs e)
+        {
+            WriteLine($"Sorry there was a problem and we need to close this program. Details : {e.ExceptionObject}");
         }
 
         private static void DisplayResult(int result) => WriteLine($"The result is : {result}");

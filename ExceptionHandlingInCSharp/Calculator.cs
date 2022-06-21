@@ -8,7 +8,7 @@ namespace ExceptionHandlingInCSharp
         public int calculate(int number1, int number2, string operation)
         {
             // had coding this exception to catch this exception.
-            throw new ArgumentNullException(paramName:nameof(operation));
+            //throw new ArgumentNullException(paramName:nameof(operation));
             string nonNullOperation =
                 operation?? throw new ArgumentNullException(nameof(operation));
             //if (operation == null)
