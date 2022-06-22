@@ -3,7 +3,7 @@ using Xunit;
 
 namespace ExceptionHandlingInCSharp.Tests.xUnit
 {
-    public class UnitTest1
+    public class CalculatorShould
     {
         [Fact]
         public void ThrowWhenUnsupportedOperation()
