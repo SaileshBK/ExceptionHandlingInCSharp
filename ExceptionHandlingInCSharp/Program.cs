@@ -25,12 +25,12 @@ namespace ExceptionHandlingInCSharp
             
             try
             {
-                int result = calculator.calculate(number1, number2, operation);
+                int result = calculator.Calculate(number1, number2, operation);
                 DisplayResult(result);
 
             }
 
-            catch (CalculationExceptionNotSupportedException ex)
+            catch (CalculationOperationNotSupportedException ex)
             {
                 //Log.Error(ex);
                 // WriteLine($"Opration is not supported. {ex}");

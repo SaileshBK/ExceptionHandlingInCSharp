@@ -5,7 +5,7 @@ namespace ExceptionHandlingInCSharp
     public class Calculator
     {
 
-        public int calculate(int number1, int number2, string operation)
+        public int Calculate(int number1, int number2, string operation)
         {
             // had coding this exception to catch this exception.
             //throw new ArgumentNullException(paramName:nameof(operation));
@@ -34,7 +34,7 @@ namespace ExceptionHandlingInCSharp
             }
             else
             {
-                throw new CalculationExceptionNotSupportedException(nonNullOperation);
+                throw new CalculationOperationNotSupportedException(nonNullOperation);
                 //throw new ArgumentOutOfRangeException(nameof(operation),"The mathematical operator is not supported.");
                 //Console.WriteLine("Unknown Operation.");
                 //return 0;

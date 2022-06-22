@@ -2,7 +2,7 @@
 
 namespace ExceptionHandlingInCSharp
 {
-    class CalculationException : Exception
+    public class CalculationException : Exception
     {
         private const string DefaultMessage = "A custome message saying, an error has occured please make sure the value are in expected range.";
 
